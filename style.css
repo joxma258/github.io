@@ -44,6 +44,42 @@ body {
   border: 3px solid #38bdf8;
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
 }
+/*Boton para descargar CV */
+.download-btn {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+
+  padding: 8px 16px;
+  border-radius: 999px;
+
+  background: #07d6ff96;          /* naranja llamativo */
+  color: #ffffff;               /* texto oscuro para contraste */
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  border: 1px solid rgba(248, 250, 252, 0.2);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.9);
+
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.download-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 700px) {
+  .download-btn {
+    top: 8px;
+    left: 8px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
 
 .header-text h1 {
   font-size: 2.1rem;
@@ -227,3 +263,37 @@ main {
     padding: 16px;
   }
 }
+
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+    padding: 0;
+  }
+
+  .page {
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    background: #ffffff;
+  }
+
+  .main-header {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .section-title {
+    color: #111827;
+    border-color: #d1d5db;
+  }
+
+  .download-btn {
+    display: none; /* ocultar el botón en el PDF */
+  }
+  * {
+    box-shadow: none !important;
+  }
+}
+
